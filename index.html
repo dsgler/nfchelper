@@ -7,11 +7,17 @@
   </head>
   <body>
     <script>
-      const scheme = new URLSearchParams(window.location.search).get("scheme");
-      console.log(scheme);
-      if (scheme) {
-        window.open(scheme, "_self");
-      }
+      window.addEventListener("load", () =>
+        setTimeout(() => {
+          const scheme = new URLSearchParams(window.location.search).get(
+            "scheme"
+          );
+          console.log(scheme);
+          if (scheme) {
+            window.location.href = scheme;
+          }
+        }, 500)
+      );
     </script>
   </body>
 </html>
